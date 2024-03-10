@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request,abort
 import nltk
+nltk.download("all")
 from nltk import word_tokenize
 from nltk import sent_tokenize
 import requests
