@@ -12,9 +12,6 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer
 import os
-from raw_data import list_data
-
-politics_keywords,sports_keywords,technology_keywords,entertainment_keywords,health_keywords,education_keywords,financial_keywords,crime_keywords,science_keywords,stock_market_keywords,environment_keywords = list_data()
 
 app = Flask(__name__)
 
@@ -98,6 +95,39 @@ def text_analysis(text_py,clean_txt_py):
 
 # Function to predict the news genre based on the presence of keywords
 def predict_news_genre(article_text):
+    # Politics Keywords
+    politics_keywords = ["politics", "government", "election", "policy", "president", "congress", "parliament", "vote", "political", "legislation"]
+    
+    # Sports Keywords
+    sports_keywords = ["sports", "football", "basketball", "soccer", "tennis", "athlete", "game", "tournament", "match", "championship"]
+    
+    # Technology Keywords
+    technology_keywords = ["technology", "innovation", "internet", "software", "startup", "digital", "AI", "artificial intelligence", "tech", "algorithm"]
+    
+    # Entertainment Keywords
+    entertainment_keywords = ["entertainment", "celebrity", "movie", "music", "TV", "Hollywood", "showbiz", "film", "entertain", "star"]
+    
+    # Health Keywords
+    health_keywords = ["health", "wellness", "medicine", "doctor", "fitness", "nutrition", "medical", "wellbeing", "hospital", "diagnosis"]
+    
+    # Education Keywords
+    education_keywords = ["education", "school", "university", "college", "student", "learning", "teacher", "classroom", "academic", "degree"]
+    
+    # Financial Keywords
+    financial_keywords = ["finance", "economy", "business", "market", "investment", "money", "bank", "economic", "stock", "capital"]
+    
+    # Crime Keywords
+    crime_keywords = ["crime", "police", "criminal", "investigation", "law", "officer", "justice", "criminality", "felony", "burglary"]
+    
+    # Science Keywords
+    science_keywords = ["science", "research", "scientist", "discovery", "experiment", "biology", "physics", "chemistry", "astronomy", "scientific"]
+    
+    # Stock Market Keywords
+    stock_market_keywords = ["stock market", "stocks", "trading", "investment", "NYSE", "NASDAQ", "shares", "investor", "stock exchange", "portfolio"]
+    
+    # Environment Keywords
+    environment_keywords = ["climate", "change", "global", "warming", "renewable", "energy", "sustainable", "greenhouse", "gases", "carbon"]
+
     # Convert article text to lowercase for case-insensitive matching
     article_text_lower = article_text.lower()
     
