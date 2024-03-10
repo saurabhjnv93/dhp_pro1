@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(202, 219, 179);
+  }
+.C{
+    
+    padding: 20px;
+    
+}
+.navbar {
+  background-color: #7d7d7d;
+  overflow: hidden;
+  padding: px;
+}
+
+.navbar img {
+  height: 50px; /* Adjust according to your image size */
+  width: auto; /* This maintains aspect ratio */
+  margin-right:auto; /* Adds some space between image and text */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+
+}
+.input_button{
+  background-color: #52060665; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.button:hover {
+  background-color: #849e86; /* Darker green */
+  color: #fff; /* White text */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+ 
+#url{
+  background-color: rgb(175, 244, 221);
+  margin: 5px;
+  font-size: x-large;
+  align-items: center;
+ }
+
+.form{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  margin-top: 2.5cm;
+  background-color: #d1cf8c;
+  padding: 30px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  width: 20cm;
+}
+.lab{
+  padding: 5px;
+  margin-top: 15px;
+}
+.input{
+  background-color: #b9e8a3;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+
+.logo {
+  max-height: 50px; /* Adjust the max height to fit your navigation bar */
+  vertical-align: middle;
+  ;
+}
+.summary{
+  border:2px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 2px;
+}
+.pos{
+  margin:10px;
+  font-size: 26px;
+  text-align: center;
+  font-weight:700;
+
+}
+
+table {
+  width: 99%;
+  border-collapse: collapse;
+  margin:10px;
+  
+}
+.most{
+  text-align: center;
+  font-size: 30px;
+}
+
+th, td {
+  border: 1px solid #070707;
+  padding: 8px;
+  text-align: left;
+  text-align: center;
+
+  
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.itel1{
+  display: flex;
+  justify-content:space-evenly;
+  margin-top:30px;
+}
+.itel2{
+  display: flex;
+  flex-direction: column;
+}
+.itel3{
+  width:150px;
+  height: 110px;
+  padding: 10px;
+  margin:10px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+
+}
+
