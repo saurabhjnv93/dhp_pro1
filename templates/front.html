@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Newz_lyz</title>
+    <link rel="stylesheet" href="..\static\style.css" />
+    <style>
+      nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <style></style>
+  <body>
+    <nav class="navbar">
+      <img class="logo" src="..\static\logo.jpeg" alt="Logo" />
+      <!-- Replace your-logo-url.jpg with the URL of your logo -->
+
+      <h2 style="color: white; font-style: italic; margin-right: 700px">
+        Newz_lyz
+      </h2>
+      <form action="/login" method="post">
+        
+        <button
+          id="viewButton"
+          style="
+            margin-left: 300px;
+            background-color: rgb(218, 208, 130);
+            border-radius: 100%;
+          " 
+          type="submit"
+          name="back.html"
+          
+        >
+          <p style="margin: 15px">Admin View</p>
+        </button>
+        
+      </form>
+    </nav>
+
+    <div class="C">
+      <div>
+        <h1 style="text-align: center">
+          Wanna know more about your news articles. <br />
+          <em>Your are just one click away !!</em>
+        </h1>
+      </div>
+      <div class="input">
+        <form class="form" action="" method="post">
+          <label class="lab" for="url"
+            ><h1>Enter url here :</h1>
+            &nbsp;</label
+          >
+          <br /><br />
+          <div>
+            <input id="url" type="text" name="URL" placeholder=" ENTER URL" />
+          </div>
+          <br /><br />
+          <button class="input_button" type="submit" name="signup">
+            Enter
+          </button>
+        </form>
+        <br />
+      </div>
+      {%if total_sent_html!=0%}
+      <div style="background-color:bisque;padding: 8px;">
+        <h3>Genere of Article : <em>    {{genere_html}}</em></h3> 
+      </div>
+      <br>
+      <div class="summary">
+        <h2>Summary of your article :</h2>
+        {{summary_html}}
+      </div>
+
+      <div>
+        <div class="pos">Universal Part of speech</div>
+        <table>
+          <tr>
+            <th>NOUN</th>
+            <th>PRONOUN</th>
+            <th>VERB</th>
+            <th>ADJECTIVE</th>
+            <th>ADVERB</th>
+          </tr>
+          <tr>
+            <td>{{pos_html["Noun"]}}</td>
+            <td>{{pos_html["Pronoun"]}}</td>
+            <td>{{pos_html["Verb"]}}</td>
+            <td>{{pos_html["Adjective"]}}</td>
+            <td>{{pos_html["Adverb"]}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="itel1">
+        <div>
+          <div class="most">Most occurring words</div> <br>
+          <img
+            src="data:image/png;base64,{{ wordcloud_image }}"
+            alt="Word Cloud"
+          />
+        </div>
+        <div class="itel2">
+          <div class="x"><h2 style="text-align: center">Article Info</h2></div>
+          <div class="itel3">
+            <h3>Total Sentence :</h3>
+            <br />{{total_sent_html}}
+          </div>
+          <div class="itel3">
+            <h3>Total Words :</h3>
+            <br />
+            {{total_words_html}}
+          </div>
+        </div>
+        
+      </div> <br><br>
+      <div style="background-color: blanchedalmond;padding:5px">Reading Time is <em>{{t2}} Min</em> to <em>{{t1}}Min</em></div> <br>
+      <div style="border: 2px solid black;padding:0.5cm;border-radius: 10px;background-color:rgb(206, 230, 231)"><h2>Complete Article :</h2>{{text_html}}</div>
+      {%endif%}
+    </div>
+    
+  </body>
+</html>
