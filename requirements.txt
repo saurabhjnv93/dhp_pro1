@@ -5,4 +5,5 @@ beautifulsoup4==4.10.0
 psycopg2==2.9.2
 sumy==0.8.1
 werkzeug==2.0.2
+python==3.11.1
 gunicorn
