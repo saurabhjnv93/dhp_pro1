@@ -156,7 +156,8 @@ def freq_words(clean_txt_py,lst_pos):
             re_dict[key] = value
     return re_dict
 
-conn = psycopg2.connect(host = "localhost", database = "dhp2024", user = "postgres", password = "Saurabh@1")
+conn = psycopg2.connect(host = "dpg-cnmnnn8cmk4c73aimm20-a
+", database = "dhp2024_dt1u", user = "saurabh", password = "qvCqmVFbSndNNiTfR6tbEljFqvZZXG36")
 cur = conn.cursor()
 
 app.secret_key =os.urandom(24)
