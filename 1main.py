@@ -8,13 +8,9 @@ from bs4 import BeautifulSoup
 import re
 import json
 import psycopg2
-from wordcloud import WordCloud
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer
-import matplotlib.pyplot as plt 
-from io import BytesIO
-import base64  
 import os
 from raw_data import list_data
 
@@ -186,15 +182,7 @@ def complier():
         genere = predict_news_genre(pure_txt)
         keywords = freq_words(clean_text,lst_pos)
         a,b = read_time(text_py)
-        wordcloud = WordCloud(width=800, height=400, background_color='rgb(239,240,220)').generate_from_frequencies(keywords)
-
-        # Save word cloud image to a file-like object
-        wordcloud_image = BytesIO()
-        wordcloud.to_image().save(wordcloud_image, format='PNG')
-        wordcloud_image.seek(0)
-
         
-        wordcloud_image_encoded = base64.b64encode(wordcloud_image.getvalue()).decode('utf-8')
         try:
             cur.execute("insert into user_info(URL,words_count,sentence_count,pos_dict,text) values (%s,%s,%s,%s,%s)",(url,word_num_py,sent_num_py,json.dumps(pos_dict),text_py))
             conn.commit()
@@ -202,9 +190,9 @@ def complier():
             pass
         
     
-        return render_template("front.html", text_html=text_py,total_words_html=word_num_py, total_sent_html=sent_num_py, pos_html=pos_dict,summary_html=text_summary, wordcloud_image=wordcloud_image_encoded,genere_html = genere,t1=int(a),t2=int(b))
+        return render_template("front.html", text_html=text_py,total_words_html=word_num_py, total_sent_html=sent_num_py, pos_html=pos_dict,summary_html=text_summary, genere_html = genere,t1=int(a),t2=int(b))
     return render_template("front.html", text_html='',total_words_html=0,
-                        total_sent_html=0, pos_html={}, summary_html='', wordcloud_image='')
+                        total_sent_html=0, pos_html={}, summary_html='')
 
 
 @app.route("/ViewDetails",methods=('POST','GET'))
